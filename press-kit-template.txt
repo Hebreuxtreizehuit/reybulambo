@@ -1,0 +1,32 @@
+REY BULAMBO - PRESS KIT TEMPLATE
+
+1. Short Biography
+[Add a 100-word biography here]
+
+2. Full Biography
+[Add a 300-500 word biography here]
+
+3. Awards and Recognitions
+- [Add award]
+- [Add selection]
+- [Add fellowship]
+
+4. Films / Projects
+- Title:
+- Year:
+- Role:
+- Synopsis:
+- Trailer Link:
+
+5. Press Contact
+- Email:
+- Phone / WhatsApp:
+- Booking contact:
+
+6. Social Links
+- LinkedIn:
+- YouTube:
+- Instagram:
+
+7. Technical Requirements
+[Add screening or media requirements here]

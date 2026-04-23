@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rey Bulambo | Filmmaker Portfolio</title>
+  <meta name="description" content="Award-winning filmmaker, podcaster, acting coach, and founder of Kakuwud Films. A cinematic multilingual portfolio for Rey Bulambo." />
+  <meta property="og:title" content="Rey Bulambo | Filmmaker Portfolio" />
+  <meta property="og:description" content="Award-winning filmmaker and storyteller elevating refugee and community voices." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --surface:#13131b;
+      --surface-2:#1a1a25;
+      --text:#f5f5f7;
+      --muted:#babac7;
+      --line:rgba(255,255,255,.09);
+      --accent:#c6a15b;
+      --accent-2:#8f6a2c;
+      --hero-overlay:linear-gradient(180deg, rgba(5,5,8,.35), rgba(5,5,8,.95));
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1180px;
+    }
+    body.light{
+      --bg:#f6f6f8;
+      --surface:#ffffff;
+      --surface-2:#f0f0f5;
+      --text:#15151d;
+      --muted:#5c5c6b;
+      --line:rgba(0,0,0,.08);
+      --accent:#8c641f;
+      --accent-2:#c7a15b;
+      --hero-overlay:linear-gradient(180deg, rgba(255,255,255,.15), rgba(246,246,248,.97));
+      --shadow:0 18px 38px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      transition:background .25s ease, color .25s ease;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .section{padding:84px 0}
+    .section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:28px;flex-wrap:wrap}
+    .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;color:var(--accent)}
+    h1,h2,h3,h4,p{margin:0}
+    h2{font-size:clamp(1.8rem, 3vw, 2.8rem);line-height:1.1}
+    .muted{color:var(--muted)}
+    .btn, button, .chip{
+      border:none; cursor:pointer; font:inherit;
+      transition:transform .18s ease, background .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease;
+    }
+    .btn:hover, button:hover, .chip:hover{transform:translateY(-1px)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:13px 18px; border-radius:999px; font-weight:700;
+      background:var(--surface-2); color:var(--text); border:1px solid var(--line)
+    }
+    .btn.primary{background:var(--accent); color:#111}
+    .btn.ghost{background:transparent}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)), var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .site-header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(14px);
+      background:color-mix(in srgb, var(--bg) 78%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      min-height:72px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800}
+    .brand-dot{
+      width:14px;height:14px;border-radius:50%;
+      background:radial-gradient(circle at 35% 35%, #fff, var(--accent));
+      box-shadow:0 0 24px rgba(198,161,91,.45);
+    }
+    .nav-links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .nav-links a{color:var(--muted); font-size:.96rem}
+    .nav-links a:hover{color:var(--text)}
+    .controls{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .lang-switch,.theme-toggle,.menu-toggle{
+      background:var(--surface); color:var(--text); border:1px solid var(--line);
+      border-radius:999px; padding:10px 12px;
+    }
+    .lang-switch{display:flex; gap:6px; padding:6px}
+    .lang-switch button{
+      background:transparent; color:var(--muted); padding:8px 10px; border-radius:999px;
+    }
+    .lang-switch button.active{background:var(--accent); color:#111}
+    .theme-toggle{width:46px;height:46px}
+    .menu-toggle{display:none}
+    .hero{
+      position:relative;
+      min-height:92vh;
+      background-image:var(--hero-overlay), url('assets/banner.png');
+      background-size:cover;
+      background-position:center top;
+      display:flex; align-items:end;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:auto -10% -18% auto;
+      width:520px; aspect-ratio:1;
+      background:radial-gradient(circle, rgba(198,161,91,.2), transparent 64%);
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative; z-index:1;
+      padding:110px 0 58px;
+      display:grid; grid-template-columns:1.25fr .75fr; gap:28px; align-items:end;
+    }
+    .hero-copy{
+      max-width:760px;
+      padding:26px;
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.45));
+      border:1px solid rgba(255,255,255,.09);
+      box-shadow:var(--shadow);
+    }
+    body.light .hero-copy{
+      background:linear-gradient(180deg, rgba(255,255,255,.38), rgba(255,255,255,.72));
+    }
+    .headline{
+      font-size:clamp(2.5rem, 5vw, 5rem);
+      line-height:.95;
+      letter-spacing:-.04em;
+      margin:8px 0 14px;
+    }
+    .lead{
+      font-size:clamp(1rem, 1.8vw, 1.22rem);
+      line-height:1.7; color:var(--muted);
+      max-width:60ch;
+    }
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
+    .hero-side{
+      display:grid; gap:16px;
+    }
+    .profile-card{padding:22px}
+    .profile-top{display:flex; gap:16px; align-items:center}
+    .avatar{
+      width:92px; height:92px; border-radius:50%; overflow:hidden; flex:0 0 auto;
+      border:4px solid rgba(255,255,255,.75); box-shadow:var(--shadow)
+    }
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+    .badge{
+      padding:8px 12px; border-radius:999px; font-size:.85rem;
+      background:var(--surface-2); color:var(--muted); border:1px solid var(--line)
+    }
+    .stats{
+      display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin-top:30px;
+    }
+    .stat{padding:20px}
+    .stat strong{display:block; font-size:clamp(1.5rem, 4vw, 2.5rem); margin-bottom:4px}
+    .split{
+      display:grid; grid-template-columns:1.15fr .85fr; gap:22px;
+    }
+    .about-grid{
+      display:grid; grid-template-columns:1fr 1fr; gap:20px;
+    }
+    .info-card{padding:24px}
+    .list{display:grid; gap:14px; padding:0; list-style:none; margin-top:18px}
+    .list li{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:14px 0; border-top:1px solid var(--line)
+    }
+    .list li:first-child{border-top:0;padding-top:0}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:.45rem;flex:0 0 auto}
+    .film-controls{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .search{
+      display:flex; align-items:center; gap:8px;
+      background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:11px 14px;
+      min-width:min(100%, 280px)
+    }
+    .search input{
+      width:100%; border:none; outline:none; background:transparent; color:var(--text); font:inherit;
+    }
+    .filter-bar{display:flex; flex-wrap:wrap; gap:10px}
+    .chip{
+      padding:10px 14px; border-radius:999px;
+      background:var(--surface); color:var(--muted); border:1px solid var(--line);
+    }
+    .chip.active{background:var(--accent); color:#111}
+    .grid{display:grid; gap:20px}
+    .films-grid{grid-template-columns:repeat(3, minmax(0, 1fr))}
+    .film-card{overflow:hidden; display:flex; flex-direction:column}
+    .poster{
+      aspect-ratio: 16 / 10;
+      background:linear-gradient(135deg, rgba(198,161,91,.28), rgba(255,255,255,.08));
+      position:relative;
+    }
+    .poster img{width:100%; height:100%; object-fit:cover; opacity:.9}
+    .poster-label{
+      position:absolute; left:16px; bottom:16px;
+      padding:8px 12px; border-radius:999px; font-size:.84rem; font-weight:700;
+      background:rgba(0,0,0,.5); border:1px solid rgba(255,255,255,.12)
+    }
+    .film-body{padding:20px; display:grid; gap:12px; flex:1}
+    .meta{display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:.92rem}
+    .stack{display:grid; gap:12px}
+    .timeline{
+      position:relative; padding-left:28px;
+    }
+    .timeline::before{
+      content:""; position:absolute; left:8px; top:8px; bottom:8px; width:2px; background:var(--line)
+    }
+    .timeline-item{position:relative; padding:0 0 20px 20px}
+    .timeline-item::before{
+      content:""; position:absolute; left:-1px; top:7px; width:18px; height:18px;
+      border-radius:50%; background:var(--accent); box-shadow:0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+    details.timeline-item summary{
+      list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:12px; align-items:start;
+    }
+    details.timeline-item summary::-webkit-details-marker{display:none}
+    .gallery-grid,.blog-grid,.events-grid,.awards-grid,.social-grid{
+      grid-template-columns:repeat(3, minmax(0, 1fr))
+    }
+    .gallery-tile{overflow:hidden; position:relative}
+    .gallery-tile button{
+      width:100%; padding:0; background:none; border:none; color:inherit; text-align:left
+    }
+    .gallery-tile img{width:100%; aspect-ratio:4/3; object-fit:cover; transition:transform .35s ease}
+    .gallery-tile:hover img{transform:scale(1.04)}
+    .gallery-caption{padding:16px}
+    .award-card,.blog-card,.event-card,.social-card,.presskit-card,.contact-card,.podcast-card,.quote-card{
+      padding:22px;
+    }
+    .quote-card blockquote{
+      font-size:1.15rem; line-height:1.7; color:var(--text)
+    }
+    .presskit-box{
+      display:grid; grid-template-columns:1.1fr .9fr; gap:22px;
+    }
+    .presskit-list{display:grid; gap:10px; margin-top:16px}
+    .presskit-item{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:14px 16px; border-radius:16px; background:var(--surface-2); border:1px solid var(--line)
+    }
+    form{display:grid; gap:14px}
+    .field, textarea{
+      width:100%; padding:14px 16px; border-radius:18px; border:1px solid var(--line);
+      background:var(--surface-2); color:var(--text); font:inherit; outline:none;
+    }
+    textarea{min-height:150px; resize:vertical}
+    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    .social-links{display:grid; gap:12px}
+    .social-link{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:14px 16px; border-radius:18px; border:1px solid var(--line); background:var(--surface-2)
+    }
+    .footer{
+      border-top:1px solid var(--line); padding:26px 0 40px; color:var(--muted)
+    }
+    .footer-wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+    .modal{
+      position:fixed; inset:0; background:rgba(0,0,0,.72);
+      display:none; place-items:center; padding:20px; z-index:50
+    }
+    .modal.open{display:grid}
+    .modal-card{
+      width:min(900px, 100%); background:var(--surface); color:var(--text);
+      border:1px solid var(--line); border-radius:26px; overflow:hidden; box-shadow:var(--shadow)
+    }
+    .modal-media{
+      aspect-ratio:16/9;
+      background:linear-gradient(135deg, rgba(198,161,91,.25), rgba(255,255,255,.06));
+      display:grid; place-items:center; padding:30px; text-align:center
+    }
+    .modal-body{padding:20px}
+    .close{
+      position:absolute; right:28px; top:24px; width:46px; height:46px;
+      border-radius:999px; border:1px solid rgba(255,255,255,.16);
+      background:rgba(17,17,17,.7); color:#fff
+    }
+    .hidden{display:none !important}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .fade-up{opacity:0; transform:translateY(24px); transition:opacity .5s ease, transform .5s ease}
+    .fade-up.show{opacity:1; transform:translateY(0)}
+    @media (max-width: 980px){
+      .hero-inner,.split,.presskit-box{grid-template-columns:1fr}
+      .stats,.films-grid,.gallery-grid,.blog-grid,.events-grid,.awards-grid,.social-grid,.about-grid{grid-template-columns:1fr 1fr}
+      .nav-links{
+        position:fixed; top:72px; left:16px; right:16px; display:none; flex-direction:column;
+        background:var(--surface); padding:18px; border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow)
+      }
+      .nav-links.open{display:flex}
+      .menu-toggle{display:inline-flex}
+    }
+    @media (max-width: 720px){
+      .container{width:min(var(--max), calc(100% - 22px))}
+      .section{padding:64px 0}
+      .hero-copy{padding:18px}
+      .stats,.films-grid,.gallery-grid,.blog-grid,.events-grid,.awards-grid,.social-grid,.about-grid,.two-col{grid-template-columns:1fr}
+      .profile-top{align-items:flex-start}
+      .nav{min-height:66px}
+      .controls{gap:8px}
+      .lang-switch button{padding:7px 8px}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-dot"></span>
+        <span data-i18n="brand">Rey Bulambo</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#films" data-i18n="nav_films">Films</a>
+        <a href="#timeline" data-i18n="nav_timeline">Timeline</a>
+        <a href="#awards" data-i18n="nav_awards">Awards</a>
+        <a href="#presskit" data-i18n="nav_presskit">Press Kit</a>
+        <a href="#blog" data-i18n="nav_blog">Blog</a>
+        <a href="#events" data-i18n="nav_events">Events</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-lang="sw">SW</button>
+        </div>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">◐</button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy fade-up">
+          <div class="eyebrow" data-i18n="hero_eyebrow">Cinematic Portfolio</div>
+          <h1 class="headline" data-i18n="hero_title">Award-Winning Filmmaker & Storyteller</h1>
+          <p class="lead" data-i18n="hero_text">Rey Bulambo creates films, conversations, and community-centered stories that elevate refugee voices, youth talent, and social impact across borders.</p>
+          <div class="hero-actions">
+            <a href="#films" class="btn primary" data-i18n="hero_btn_watch">Watch Films</a>
+            <a href="#contact" class="btn" data-i18n="hero_btn_contact">Book / Contact</a>
+            <a href="#presskit" class="btn ghost" data-i18n="hero_btn_presskit">View Press Kit</a>
+          </div>
+        </div>
+
+        <div class="hero-side fade-up">
+          <div class="card profile-card">
+            <div class="profile-top">
+              <div class="avatar"><img src="assets/avatar.png" alt="Portrait of Rey Bulambo"></div>
+              <div class="stack">
+                <h3>Rey Bulambo</h3>
+                <p class="muted" data-i18n="profile_role">Filmmaker • Podcaster • Acting Coach</p>
+                <p class="muted" data-i18n="profile_location">Based in Lodwar, Turkana County, Kenya</p>
+              </div>
+            </div>
+            <div class="badges">
+              <span class="badge" data-i18n="badge_founder">Founder, Kakuwud Films</span>
+              <span class="badge" data-i18n="badge_fellow">2021 Solution Journalism Fellow</span>
+              <span class="badge" data-i18n="badge_impact">Social Impact Storytelling</span>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="card stat">
+              <strong class="count" data-target="12">0</strong>
+              <span class="muted" data-i18n="stat_films">Film projects</span>
+            </div>
+            <div class="card stat">
+              <strong class="count" data-target="5">0</strong>
+              <span class="muted" data-i18n="stat_awards">Awards / recognitions</span>
+            </div>
+            <div class="card stat">
+              <strong class="count" data-target="18">0</strong>
+              <span class="muted" data-i18n="stat_workshops">Workshops & talks</span>
+            </div>
+            <div class="card stat">
+              <strong class="count" data-target="500">0</strong>
+              <span class="muted" data-i18n="stat_network">Professional network</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="about_eyebrow">About Rey</div>
+            <h2 data-i18n="about_title">Biography, mission, and profile foundations</h2>
+          </div>
+          <p class="muted" data-i18n="about_intro">This version includes ready-to-fill content blocks so biography details can be completed later without redesigning the site.</p>
+        </div>
+
+        <div class="split">
+          <div class="about-grid">
+            <div class="card info-card fade-up">
+              <h3 data-i18n="bio_short_title">Professional summary</h3>
+              <p class="muted" style="margin-top:12px" data-i18n="bio_short_text">Award-winning filmmaker recognized for storytelling focused on refugee experiences, youth empowerment, theater practice, and podcast conversations that amplify underrepresented voices.</p>
+              <ul class="list">
+                <li><span class="dot"></span><div><strong data-i18n="bio_early_label">Early life</strong><p class="muted" data-i18n="placeholder_early">Add early life story, background, and formative experiences here.</p></div></li>
+                <li><span class="dot"></span><div><strong data-i18n="bio_education_label">Education</strong><p class="muted" data-i18n="placeholder_education">Add academic training, workshops, film education, and mentorship history here.</p></div></li>
+                <li><span class="dot"></span><div><strong data-i18n="bio_career_label">Career path</strong><p class="muted" data-i18n="placeholder_career">Add career turning points, institutions, collaborations, and major roles here.</p></div></li>
+              </ul>
+            </div>
+
+            <div class="card info-card fade-up">
+              <h3 data-i18n="impact_title">Impact focus</h3>
+              <ul class="list">
+                <li><span class="dot"></span><div><strong data-i18n="impact_1_title">Refugee storytelling</strong><p class="muted" data-i18n="impact_1_text">Documentary and narrative work centered on dignity, resilience, and lived experience.</p></div></li>
+                <li><span class="dot"></span><div><strong data-i18n="impact_2_title">Youth talent development</strong><p class="muted" data-i18n="impact_2_text">Creative training, acting coaching, and opportunities for refugee and host-community youth.</p></div></li>
+                <li><span class="dot"></span><div><strong data-i18n="impact_3_title">Community partnerships</strong><p class="muted" data-i18n="impact_3_text">Ready-to-highlight collaborations with FilmAid Kenya, NGOs, festivals, and media platforms.</p></div></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card info-card fade-up">
+            <h3 data-i18n="founder_title">Founder narrative box</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="founder_text">Use this section to tell the story of Kakuwud Films: why it started, who it serves, what it produces, and how it contributes to social change through cinema and performance.</p>
+            <ul class="list">
+              <li><span class="dot"></span><div><strong data-i18n="founder_box_1_title">Origin story</strong><p class="muted" data-i18n="founder_box_1_text">Add the origin, mission, and founding context of Kakuwud Films.</p></div></li>
+              <li><span class="dot"></span><div><strong data-i18n="founder_box_2_title">Programs</strong><p class="muted" data-i18n="founder_box_2_text">Add workshops, productions, youth labs, theater work, and podcast initiatives.</p></div></li>
+              <li><span class="dot"></span><div><strong data-i18n="founder_box_3_title">Vision</strong><p class="muted" data-i18n="founder_box_3_text">Add the future vision: regional film reach, mentorship, festivals, and global audiences.</p></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="films">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="films_eyebrow">Film Library</div>
+            <h2 data-i18n="films_title">Dynamic filmography and gallery</h2>
+          </div>
+          <div class="film-controls">
+            <label class="search" aria-label="Search films">
+              <span>⌕</span>
+              <input type="search" id="filmSearch" data-i18n-placeholder="search_placeholder" placeholder="Search title or role">
+            </label>
+            <div class="filter-bar" id="filterBar">
+              <button class="chip active" data-filter="all" data-i18n="filter_all">All</button>
+              <button class="chip" data-filter="documentary" data-i18n="filter_documentary">Documentary</button>
+              <button class="chip" data-filter="short" data-i18n="filter_short">Short Film</button>
+              <button class="chip" data-filter="podcast" data-i18n="filter_podcast">Podcast</button>
+              <button class="chip" data-filter="theater" data-i18n="filter_theater">Theater</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid films-grid" id="filmsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="timeline_eyebrow">Career Timeline</div>
+            <h2 data-i18n="timeline_title">Expandable biography and milestone timeline</h2>
+          </div>
+          <p class="muted" data-i18n="timeline_intro">Each milestone opens for more details, making it easy to add verified facts later.</p>
+        </div>
+
+        <div class="card info-card">
+          <div class="timeline">
+            <details class="timeline-item" open>
+              <summary><strong data-i18n="timeline_1_title">Early creative formation</strong><span class="muted" data-i18n="timeline_year_placeholder">Add year</span></summary>
+              <p class="muted" style="margin-top:12px" data-i18n="timeline_1_text">Add the earliest storytelling, performance, or media experiences that shaped the filmmaker’s direction.</p>
+            </details>
+            <details class="timeline-item">
+              <summary><strong data-i18n="timeline_2_title">Training and growth phase</strong><span class="muted" data-i18n="timeline_year_placeholder">Add year</span></summary>
+              <p class="muted" style="margin-top:12px" data-i18n="timeline_2_text">Add education, workshops, mentorship, and first major productions or collaborations.</p>
+            </details>
+            <details class="timeline-item">
+              <summary><strong data-i18n="timeline_3_title">Solution Journalism fellowship</strong><span class="muted">2021</span></summary>
+              <p class="muted" style="margin-top:12px" data-i18n="timeline_3_text">Highlight the 2021 fellowship and explain how it influenced reporting, documentary framing, and impact storytelling.</p>
+            </details>
+            <details class="timeline-item">
+              <summary><strong data-i18n="timeline_4_title">Kakuwud Films leadership</strong><span class="muted" data-i18n="timeline_year_placeholder">Add year</span></summary>
+              <p class="muted" style="margin-top:12px" data-i18n="timeline_4_text">Add leadership milestones, youth development work, notable productions, and community-building efforts.</p>
+            </details>
+            <details class="timeline-item">
+              <summary><strong data-i18n="timeline_5_title">Next chapter</strong><span class="muted" data-i18n="timeline_year_placeholder_future">Future</span></summary>
+              <p class="muted" style="margin-top:12px" data-i18n="timeline_5_text">Use this space to outline upcoming films, festivals, regional collaborations, or international distribution goals.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="awards">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="awards_eyebrow">Recognition</div>
+            <h2 data-i18n="awards_title">Awards, honors, and festival-ready credibility</h2>
+          </div>
+          <p class="muted" data-i18n="awards_intro">Some entries are placeholders so verified award history can be inserted quickly.</p>
+        </div>
+
+        <div class="grid awards-grid">
+          <article class="card award-card fade-up">
+            <div class="eyebrow">2021</div>
+            <h3 data-i18n="award_1_title">Solution Journalism Fellow</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="award_1_text">Ready section for fellowship description, organizer, and why it matters professionally.</p>
+          </article>
+          <article class="card award-card fade-up">
+            <div class="eyebrow" data-i18n="award_placeholder_year">Add year</div>
+            <h3 data-i18n="award_2_title">Festival selection / screening</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="award_2_text">Add a festival name, official selection note, or screening milestone here.</p>
+          </article>
+          <article class="card award-card fade-up">
+            <div class="eyebrow" data-i18n="award_placeholder_year">Add year</div>
+            <h3 data-i18n="award_3_title">Community impact recognition</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="award_3_text">Add NGO, media, or community recognition related to storytelling and youth development.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="presskit">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="presskit_eyebrow">Press Kit</div>
+            <h2 data-i18n="presskit_title">Media materials and downloadable placeholders</h2>
+          </div>
+          <p class="muted" data-i18n="presskit_intro">Prepared as a box structure so a full press kit can be added without changing the design.</p>
+        </div>
+
+        <div class="presskit-box">
+          <div class="card presskit-card fade-up">
+            <h3 data-i18n="presskit_left_title">Press kit contents</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="presskit_left_text">Replace placeholders with real biography PDFs, headshots, posters, screening notes, technical specs, and interview requests.</p>
+            <div class="presskit-list">
+              <div class="presskit-item"><span data-i18n="presskit_item_1">Short biography PDF</span><a class="btn" href="press-kit-template.txt" download data-i18n="download_template">Download template</a></div>
+              <div class="presskit-item"><span data-i18n="presskit_item_2">High-resolution headshots</span><span class="muted" data-i18n="replace_here">Replace here</span></div>
+              <div class="presskit-item"><span data-i18n="presskit_item_3">Film posters & stills</span><span class="muted" data-i18n="replace_here">Replace here</span></div>
+              <div class="presskit-item"><span data-i18n="presskit_item_4">Festival / screening notes</span><span class="muted" data-i18n="replace_here">Replace here</span></div>
+            </div>
+          </div>
+          <div class="card quote-card fade-up">
+            <div class="eyebrow" data-i18n="quote_label">Suggested quote block</div>
+            <blockquote data-i18n="quote_text">“Use this area for a powerful artist statement, press quote, or mission statement that summarizes the purpose of the work.”</blockquote>
+            <p class="muted" style="margin-top:16px" data-i18n="quote_note">This box works well for critics, media praise, or a short signature message from Rey Bulambo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="gallery_eyebrow">Visual Portfolio</div>
+            <h2 data-i18n="gallery_title">Set photos, posters, and community moments</h2>
+          </div>
+          <p class="muted" data-i18n="gallery_intro">Click any card to open a larger lightbox view.</p>
+        </div>
+
+        <div class="grid gallery-grid">
+          <article class="card gallery-tile fade-up">
+            <button type="button" class="gallery-open" data-image="assets/banner.png" data-title="Interview / podcast setting">
+              <img src="assets/banner.png" alt="Interview or podcast scene">
+              <div class="gallery-caption">
+                <h3 data-i18n="gallery_card_1_title">Interview setup</h3>
+                <p class="muted" data-i18n="gallery_card_1_text">Ready for behind-the-scenes or media production caption.</p>
+              </div>
+            </button>
+          </article>
+          <article class="card gallery-tile fade-up">
+            <button type="button" class="gallery-open" data-image="assets/avatar.png" data-title="Portrait / headshot">
+              <img src="assets/avatar.png" alt="Portrait">
+              <div class="gallery-caption">
+                <h3 data-i18n="gallery_card_2_title">Official portrait</h3>
+                <p class="muted" data-i18n="gallery_card_2_text">Use for press, biography page, or festival program.</p>
+              </div>
+            </button>
+          </article>
+          <article class="card gallery-tile fade-up">
+            <button type="button" class="gallery-open" data-image="assets/film1.png" data-title="Film card placeholder">
+              <img src="assets/film1.png" alt="Film poster placeholder">
+              <div class="gallery-caption">
+                <h3 data-i18n="gallery_card_3_title">Poster placeholder</h3>
+                <p class="muted" data-i18n="gallery_card_3_text">Swap this with a real poster, still, or event photo.</p>
+              </div>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="podcast">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="podcast_eyebrow">Podcast</div>
+            <h2 data-i18n="podcast_title">Conversation and audio storytelling</h2>
+          </div>
+        </div>
+        <div class="split">
+          <article class="card podcast-card fade-up">
+            <h3 data-i18n="podcast_card_1_title">Featured episode placeholder</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="podcast_card_1_text">Add episode title, guest, streaming link, and one-sentence takeaway.</p>
+            <div class="hero-actions" style="margin-top:18px">
+              <button class="btn primary trailer-btn" data-title="Podcast Episode" data-desc="Embed an audio player or a streaming link here." data-i18n="listen_preview">Listen Preview</button>
+            </div>
+          </article>
+          <article class="card podcast-card fade-up">
+            <h3 data-i18n="theater_title">Theater and coaching box</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="theater_text">Add stage productions, acting coaching work, workshop facilitation, and youth performance labs here.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="blog">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="blog_eyebrow">Journal / Blog</div>
+            <h2 data-i18n="blog_title">Stories, reflections, and production notes</h2>
+          </div>
+          <p class="muted" data-i18n="blog_intro">These cards can become articles, essays, or project updates.</p>
+        </div>
+
+        <div class="grid blog-grid">
+          <article class="card blog-card fade-up">
+            <div class="eyebrow" data-i18n="blog_placeholder">Placeholder</div>
+            <h3 data-i18n="blog_1_title">Life, cinema, and community storytelling</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="blog_1_text">Use this card for a future blog article or an essay about filmmaking in community spaces.</p>
+          </article>
+          <article class="card blog-card fade-up">
+            <div class="eyebrow" data-i18n="blog_placeholder">Placeholder</div>
+            <h3 data-i18n="blog_2_title">Behind the scenes of a documentary</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="blog_2_text">Add insights on production, ethics, interviews, editing, or field work.</p>
+          </article>
+          <article class="card blog-card fade-up">
+            <div class="eyebrow" data-i18n="blog_placeholder">Placeholder</div>
+            <h3 data-i18n="blog_3_title">Youth creativity and talent development</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="blog_3_text">Share outcomes, reflections, and lessons from training emerging storytellers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="events">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="events_eyebrow">Screenings & Talks</div>
+            <h2 data-i18n="events_title">Upcoming events and appearances</h2>
+          </div>
+          <p class="muted" data-i18n="events_intro">Ready for festivals, screenings, workshops, and speaking invitations.</p>
+        </div>
+
+        <div class="grid events-grid">
+          <article class="card event-card fade-up">
+            <div class="eyebrow" data-i18n="event_placeholder_date">Add date</div>
+            <h3 data-i18n="event_1_title">Film screening placeholder</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="event_1_text">Add event name, venue, city, and registration link here.</p>
+          </article>
+          <article class="card event-card fade-up">
+            <div class="eyebrow" data-i18n="event_placeholder_date">Add date</div>
+            <h3 data-i18n="event_2_title">Workshop or talk placeholder</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="event_2_text">Use for panel invitations, coaching sessions, and public storytelling events.</p>
+          </article>
+          <article class="card event-card fade-up">
+            <div class="eyebrow" data-i18n="event_placeholder_date">Add date</div>
+            <h3 data-i18n="event_3_title">Festival appearance placeholder</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="event_3_text">Add official selection, Q&A, or networking event details.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="social">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="social_eyebrow">Connect</div>
+            <h2 data-i18n="social_title">Social media and collaboration pathways</h2>
+          </div>
+          <p class="muted" data-i18n="social_intro">These buttons are ready to be replaced with real links.</p>
+        </div>
+        <div class="grid social-grid">
+          <article class="card social-card fade-up">
+            <h3>LinkedIn</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="social_linkedin_text">Replace with professional networking profile.</p>
+          </article>
+          <article class="card social-card fade-up">
+            <h3>YouTube</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="social_youtube_text">Replace with trailers, interviews, or production channel.</p>
+          </article>
+          <article class="card social-card fade-up">
+            <h3>Instagram</h3>
+            <p class="muted" style="margin-top:12px" data-i18n="social_instagram_text">Replace with behind-the-scenes and visual updates.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" data-i18n="contact_eyebrow">Contact</div>
+            <h2 data-i18n="contact_title">Booking, partnerships, and inquiries</h2>
+          </div>
+          <p class="muted" data-i18n="contact_intro">The form below is ready for Netlify Forms. Replace placeholder contact details as needed.</p>
+        </div>
+
+        <div class="split">
+          <div class="card contact-card fade-up">
+            <form name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact">
+              <div class="two-col">
+                <input class="field" type="text" name="name" data-i18n-placeholder="form_name" placeholder="Your name" required>
+                <input class="field" type="email" name="email" data-i18n-placeholder="form_email" placeholder="Email address" required>
+              </div>
+              <div class="two-col">
+                <input class="field" type="text" name="subject" data-i18n-placeholder="form_subject" placeholder="Subject">
+                <input class="field" type="text" name="organization" data-i18n-placeholder="form_org" placeholder="Organization / Company">
+              </div>
+              <textarea name="message" data-i18n-placeholder="form_message" placeholder="Tell us about your project, invitation, or collaboration." required></textarea>
+              <button class="btn primary" type="submit" data-i18n="form_send">Send Message</button>
+            </form>
+          </div>
+
+          <div class="card contact-card fade-up">
+            <h3 data-i18n="contact_boxes_title">Quick contact boxes</h3>
+            <div class="social-links" style="margin-top:18px">
+              <div class="social-link"><span data-i18n="contact_box_email">Professional email</span><span class="muted">add-email@example.com</span></div>
+              <div class="social-link"><span data-i18n="contact_box_whatsapp">WhatsApp / Phone</span><span class="muted">+000 000 000 000</span></div>
+              <div class="social-link"><span data-i18n="contact_box_booking">Speaking / Festival booking</span><span class="muted" data-i18n="contact_box_replace">Replace with booking contact</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong>Rey Bulambo</strong>
+        <p class="muted" data-i18n="footer_text">Cinematic multilingual portfolio template ready for Netlify deployment.</p>
+      </div>
+      <p class="muted">© <span id="year"></span> Rey Bulambo</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="mediaModal" aria-hidden="true">
+    <button type="button" class="close" id="closeModal" aria-label="Close">✕</button>
+    <div class="modal-card">
+      <div class="modal-media" id="modalMedia"></div>
+      <div class="modal-body">
+        <h3 id="modalTitle">Preview</h3>
+        <p class="muted" id="modalDesc" style="margin-top:12px"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        brand: "Rey Bulambo",
+        nav_about: "About", nav_films: "Films", nav_timeline: "Timeline", nav_awards: "Awards", nav_presskit: "Press Kit", nav_blog: "Blog", nav_events: "Events", nav_contact: "Contact",
+        hero_eyebrow: "Cinematic Portfolio",
+        hero_title: "Award-Winning Filmmaker & Storyteller",
+        hero_text: "Rey Bulambo creates films, conversations, and community-centered stories that elevate refugee voices, youth talent, and social impact across borders.",
+        hero_btn_watch: "Watch Films", hero_btn_contact: "Book / Contact", hero_btn_presskit: "View Press Kit",
+        profile_role: "Filmmaker • Podcaster • Acting Coach", profile_location: "Based in Lodwar, Turkana County, Kenya",
+        badge_founder: "Founder, Kakuwud Films", badge_fellow: "2021 Solution Journalism Fellow", badge_impact: "Social Impact Storytelling",
+        stat_films: "Film projects", stat_awards: "Awards / recognitions", stat_workshops: "Workshops & talks", stat_network: "Professional network",
+        about_eyebrow: "About Rey", about_title: "Biography, mission, and profile foundations", about_intro: "This version includes ready-to-fill content blocks so biography details can be completed later without redesigning the site.",
+        bio_short_title: "Professional summary", bio_short_text: "Award-winning filmmaker recognized for storytelling focused on refugee experiences, youth empowerment, theater practice, and podcast conversations that amplify underrepresented voices.",
+        bio_early_label: "Early life", placeholder_early: "Add early life story, background, and formative experiences here.",
+        bio_education_label: "Education", placeholder_education: "Add academic training, workshops, film education, and mentorship history here.",
+        bio_career_label: "Career path", placeholder_career: "Add career turning points, institutions, collaborations, and major roles here.",
+        impact_title: "Impact focus", impact_1_title: "Refugee storytelling", impact_1_text: "Documentary and narrative work centered on dignity, resilience, and lived experience.",
+        impact_2_title: "Youth talent development", impact_2_text: "Creative training, acting coaching, and opportunities for refugee and host-community youth.",
+        impact_3_title: "Community partnerships", impact_3_text: "Ready-to-highlight collaborations with FilmAid Kenya, NGOs, festivals, and media platforms.",
+        founder_title: "Founder narrative box", founder_text: "Use this section to tell the story of Kakuwud Films: why it started, who it serves, what it produces, and how it contributes to social change through cinema and performance.",
+        founder_box_1_title: "Origin story", founder_box_1_text: "Add the origin, mission, and founding context of Kakuwud Films.",
+        founder_box_2_title: "Programs", founder_box_2_text: "Add workshops, productions, youth labs, theater work, and podcast initiatives.",
+        founder_box_3_title: "Vision", founder_box_3_text: "Add the future vision: regional film reach, mentorship, festivals, and global audiences.",
+        films_eyebrow: "Film Library", films_title: "Dynamic filmography and gallery", search_placeholder: "Search title or role",
+        filter_all: "All", filter_documentary: "Documentary", filter_short: "Short Film", filter_podcast: "Podcast", filter_theater: "Theater",
+        timeline_eyebrow: "Career Timeline", timeline_title: "Expandable biography and milestone timeline", timeline_intro: "Each milestone opens for more details, making it easy to add verified facts later.",
+        timeline_1_title: "Early creative formation", timeline_year_placeholder: "Add year", timeline_1_text: "Add the earliest storytelling, performance, or media experiences that shaped the filmmaker’s direction.",
+        timeline_2_title: "Training and growth phase", timeline_2_text: "Add education, workshops, mentorship, and first major productions or collaborations.",
+        timeline_3_title: "Solution Journalism fellowship", timeline_3_text: "Highlight the 2021 fellowship and explain how it influenced reporting, documentary framing, and impact storytelling.",
+        timeline_4_title: "Kakuwud Films leadership", timeline_4_text: "Add leadership milestones, youth development work, notable productions, and community-building efforts.",
+        timeline_year_placeholder_future: "Future", timeline_5_title: "Next chapter", timeline_5_text: "Use this space to outline upcoming films, festivals, regional collaborations, or international distribution goals.",
+        awards_eyebrow: "Recognition", awards_title: "Awards, honors, and festival-ready credibility", awards_intro: "Some entries are placeholders so verified award history can be inserted quickly.",
+        award_placeholder_year: "Add year", award_1_title: "Solution Journalism Fellow", award_1_text: "Ready section for fellowship description, organizer, and why it matters professionally.",
+        award_2_title: "Festival selection / screening", award_2_text: "Add a festival name, official selection note, or screening milestone here.",
+        award_3_title: "Community impact recognition", award_3_text: "Add NGO, media, or community recognition related to storytelling and youth development.",
+        presskit_eyebrow: "Press Kit", presskit_title: "Media materials and downloadable placeholders", presskit_intro: "Prepared as a box structure so a full press kit can be added without changing the design.",
+        presskit_left_title: "Press kit contents", presskit_left_text: "Replace placeholders with real biography PDFs, headshots, posters, screening notes, technical specs, and interview requests.",
+        presskit_item_1: "Short biography PDF", presskit_item_2: "High-resolution headshots", presskit_item_3: "Film posters & stills", presskit_item_4: "Festival / screening notes", download_template: "Download template", replace_here: "Replace here",
+        quote_label: "Suggested quote block", quote_text: "“Use this area for a powerful artist statement, press quote, or mission statement that summarizes the purpose of the work.”", quote_note: "This box works well for critics, media praise, or a short signature message from Rey Bulambo.",
+        gallery_eyebrow: "Visual Portfolio", gallery_title: "Set photos, posters, and community moments", gallery_intro: "Click any card to open a larger lightbox view.",
+        gallery_card_1_title: "Interview setup", gallery_card_1_text: "Ready for behind-the-scenes or media production caption.",
+        gallery_card_2_title: "Official portrait", gallery_card_2_text: "Use for press, biography page, or festival program.",
+        gallery_card_3_title: "Poster placeholder", gallery_card_3_text: "Swap this with a real poster, still, or event photo.",
+        podcast_eyebrow: "Podcast", podcast_title: "Conversation and audio storytelling", podcast_card_1_title: "Featured episode placeholder", podcast_card_1_text: "Add episode title, guest, streaming link, and one-sentence takeaway.", listen_preview: "Listen Preview",
+        theater_title: "Theater and coaching box", theater_text: "Add stage productions, acting coaching work, workshop facilitation, and youth performance labs here.",
+        blog_eyebrow: "Journal / Blog", blog_title: "Stories, reflections, and production notes", blog_intro: "These cards can become articles, essays, or project updates.", blog_placeholder: "Placeholder",
+        blog_1_title: "Life, cinema, and community storytelling", blog_1_text: "Use this card for a future blog article or an essay about filmmaking in community spaces.",
+        blog_2_title: "Behind the scenes of a documentary", blog_2_text: "Add insights on production, ethics, interviews, editing, or field work.",
+        blog_3_title: "Youth creativity and talent development", blog_3_text: "Share outcomes, reflections, and lessons from training emerging storytellers.",
+        events_eyebrow: "Screenings & Talks", events_title: "Upcoming events and appearances", events_intro: "Ready for festivals, screenings, workshops, and speaking invitations.",
+        event_placeholder_date: "Add date", event_1_title: "Film screening placeholder", event_1_text: "Add event name, venue, city, and registration link here.",
+        event_2_title: "Workshop or talk placeholder", event_2_text: "Use for panel invitations, coaching sessions, and public storytelling events.",
+        event_3_title: "Festival appearance placeholder", event_3_text: "Add official selection, Q&A, or networking event details.",
+        social_eyebrow: "Connect", social_title: "Social media and collaboration pathways", social_intro: "These buttons are ready to be replaced with real links.",
+        social_linkedin_text: "Replace with professional networking profile.", social_youtube_text: "Replace with trailers, interviews, or production channel.", social_instagram_text: "Replace with behind-the-scenes and visual updates.",
+        contact_eyebrow: "Contact", contact_title: "Booking, partnerships, and inquiries", contact_intro: "The form below is ready for Netlify Forms. Replace placeholder contact details as needed.",
+        form_name: "Your name", form_email: "Email address", form_subject: "Subject", form_org: "Organization / Company", form_message: "Tell us about your project, invitation, or collaboration.", form_send: "Send Message",
+        contact_boxes_title: "Quick contact boxes", contact_box_email: "Professional email", contact_box_whatsapp: "WhatsApp / Phone", contact_box_booking: "Speaking / Festival booking", contact_box_replace: "Replace with booking contact",
+        footer_text: "Cinematic multilingual portfolio template ready for Netlify deployment."
+      },
+      fr: {
+        brand: "Rey Bulambo",
+        nav_about: "À propos", nav_films: "Films", nav_timeline: "Chronologie", nav_awards: "Prix", nav_presskit: "Dossier de presse", nav_blog: "Blog", nav_events: "Événements", nav_contact: "Contact",
+        hero_eyebrow: "Portfolio cinématographique",
+        hero_title: "Cinéaste primé et conteur visuel",
+        hero_text: "Rey Bulambo crée des films, des conversations et des récits ancrés dans la communauté qui valorisent les voix des réfugiés, les talents des jeunes et l’impact social au-delà des frontières.",
+        hero_btn_watch: "Voir les films", hero_btn_contact: "Réserver / Contacter", hero_btn_presskit: "Voir le dossier de presse",
+        profile_role: "Cinéaste • Podcasteur • Coach d’acteurs", profile_location: "Basé à Lodwar, comté de Turkana, Kenya",
+        badge_founder: "Fondateur, Kakuwud Films", badge_fellow: "Boursier Solution Journalism 2021", badge_impact: "Narration à impact social",
+        stat_films: "Projets filmiques", stat_awards: "Prix / reconnaissances", stat_workshops: "Ateliers et conférences", stat_network: "Réseau professionnel",
+        about_eyebrow: "À propos de Rey", about_title: "Biographie, mission et bases du profil", about_intro: "Cette version comprend des blocs prêts à remplir pour compléter la biographie plus tard sans refaire le design.",
+        bio_short_title: "Résumé professionnel", bio_short_text: "Cinéaste primé reconnu pour des récits centrés sur les expériences des réfugiés, l’autonomisation des jeunes, la pratique théâtrale et les conversations podcast qui amplifient les voix sous-représentées.",
+        bio_early_label: "Jeunesse", placeholder_early: "Ajoutez ici l’histoire de jeunesse, le contexte et les expériences formatrices.",
+        bio_education_label: "Formation", placeholder_education: "Ajoutez ici la formation académique, les ateliers, l’éducation cinématographique et le mentorat.",
+        bio_career_label: "Parcours professionnel", placeholder_career: "Ajoutez ici les tournants de carrière, institutions, collaborations et rôles majeurs.",
+        impact_title: "Axes d’impact", impact_1_title: "Récits sur les réfugiés", impact_1_text: "Un travail documentaire et narratif centré sur la dignité, la résilience et l’expérience vécue.",
+        impact_2_title: "Développement des talents des jeunes", impact_2_text: "Formation créative, coaching d’acteurs et opportunités pour les jeunes réfugiés et les communautés hôtes.",
+        impact_3_title: "Partenariats communautaires", impact_3_text: "Section prête à valoriser des collaborations avec FilmAid Kenya, des ONG, festivals et médias.",
+        founder_title: "Bloc narratif du fondateur", founder_text: "Utilisez cette section pour raconter l’histoire de Kakuwud Films : sa naissance, son public, ses productions et sa contribution au changement social par le cinéma et la performance.",
+        founder_box_1_title: "Origine", founder_box_1_text: "Ajoutez l’origine, la mission et le contexte de fondation de Kakuwud Films.",
+        founder_box_2_title: "Programmes", founder_box_2_text: "Ajoutez ateliers, productions, laboratoires jeunesse, théâtre et initiatives podcast.",
+        founder_box_3_title: "Vision", founder_box_3_text: "Ajoutez la vision future : rayonnement régional, mentorat, festivals et audiences mondiales.",
+        films_eyebrow: "Bibliothèque de films", films_title: "Filmographie dynamique et galerie", search_placeholder: "Rechercher un titre ou un rôle",
+        filter_all: "Tout", filter_documentary: "Documentaire", filter_short: "Court métrage", filter_podcast: "Podcast", filter_theater: "Théâtre",
+        timeline_eyebrow: "Chronologie de carrière", timeline_title: "Biographie déroulante et chronologie des étapes", timeline_intro: "Chaque étape s’ouvre pour plus de détails, ce qui facilite l’ajout de faits vérifiés plus tard.",
+        timeline_1_title: "Premières formations créatives", timeline_year_placeholder: "Ajouter l’année", timeline_1_text: "Ajoutez les premières expériences de narration, de performance ou de média qui ont orienté le parcours du cinéaste.",
+        timeline_2_title: "Phase de formation et de croissance", timeline_2_text: "Ajoutez l’éducation, les ateliers, le mentorat et les premières productions ou collaborations majeures.",
+        timeline_3_title: "Bourse Solution Journalism", timeline_3_text: "Mettez en valeur la bourse de 2021 et son influence sur le reportage, le cadrage documentaire et la narration à impact.",
+        timeline_4_title: "Leadership à Kakuwud Films", timeline_4_text: "Ajoutez les jalons de leadership, le travail avec les jeunes, les productions notables et les efforts communautaires.",
+        timeline_year_placeholder_future: "Futur", timeline_5_title: "Prochaine étape", timeline_5_text: "Utilisez cet espace pour présenter les films à venir, festivals, collaborations régionales ou objectifs de diffusion internationale.",
+        awards_eyebrow: "Reconnaissance", awards_title: "Prix, distinctions et crédibilité pour festivals", awards_intro: "Certaines entrées sont des espaces réservés afin d’insérer rapidement l’historique vérifié des prix.",
+        award_placeholder_year: "Ajouter l’année", award_1_title: "Boursier Solution Journalism", award_1_text: "Section prête pour la description de la bourse, l’organisateur et son importance professionnelle.",
+        award_2_title: "Sélection / projection en festival", award_2_text: "Ajoutez ici le nom d’un festival, une note de sélection officielle ou une étape de projection.",
+        award_3_title: "Reconnaissance d’impact communautaire", award_3_text: "Ajoutez une reconnaissance d’ONG, de média ou de communauté liée à la narration et au développement des jeunes.",
+        presskit_eyebrow: "Dossier de presse", presskit_title: "Matériaux médias et espaces téléchargeables", presskit_intro: "Préparé sous forme de blocs pour qu’un dossier de presse complet puisse être ajouté sans changer le design.",
+        presskit_left_title: "Contenu du dossier de presse", presskit_left_text: "Remplacez les espaces réservés par de vraies biographies PDF, portraits, affiches, notes de projection, fiches techniques et demandes d’interview.",
+        presskit_item_1: "Biographie courte PDF", presskit_item_2: "Portraits haute résolution", presskit_item_3: "Affiches et images de films", presskit_item_4: "Notes de festival / projection", download_template: "Télécharger le modèle", replace_here: "À remplacer ici",
+        quote_label: "Bloc de citation suggéré", quote_text: "« Utilisez cet espace pour une déclaration artistique forte, une citation de presse ou une phrase de mission qui résume le sens du travail. »", quote_note: "Ce bloc convient très bien pour une critique, un éloge médiatique ou un court message signé de Rey Bulambo.",
+        gallery_eyebrow: "Portfolio visuel", gallery_title: "Photos de plateau, affiches et moments communautaires", gallery_intro: "Cliquez sur une carte pour ouvrir une vue agrandie.",
+        gallery_card_1_title: "Installation d’interview", gallery_card_1_text: "Prêt pour une légende de coulisses ou de production média.",
+        gallery_card_2_title: "Portrait officiel", gallery_card_2_text: "À utiliser pour la presse, la biographie ou le programme d’un festival.",
+        gallery_card_3_title: "Affiche de remplacement", gallery_card_3_text: "Remplacez ceci par une vraie affiche, image fixe ou photo d’événement.",
+        podcast_eyebrow: "Podcast", podcast_title: "Conversation et narration audio", podcast_card_1_title: "Épisode vedette de remplacement", podcast_card_1_text: "Ajoutez le titre de l’épisode, l’invité, le lien d’écoute et une phrase clé.", listen_preview: "Écouter un aperçu",
+        theater_title: "Bloc théâtre et coaching", theater_text: "Ajoutez les productions scéniques, le coaching d’acteurs, la facilitation d’ateliers et les laboratoires de performance pour jeunes.",
+        blog_eyebrow: "Journal / Blog", blog_title: "Récits, réflexions et notes de production", blog_intro: "Ces cartes peuvent devenir des articles, essais ou mises à jour de projet.", blog_placeholder: "Espace réservé",
+        blog_1_title: "Vie, cinéma et narration communautaire", blog_1_text: "Utilisez cette carte pour un futur article ou essai sur le cinéma dans les espaces communautaires.",
+        blog_2_title: "Dans les coulisses d’un documentaire", blog_2_text: "Ajoutez des réflexions sur la production, l’éthique, les interviews, le montage ou le terrain.",
+        blog_3_title: "Créativité des jeunes et développement du talent", blog_3_text: "Partagez les résultats, réflexions et leçons tirées de la formation des conteurs émergents.",
+        events_eyebrow: "Projections et interventions", events_title: "Événements et apparitions à venir", events_intro: "Prêt pour les festivals, projections, ateliers et invitations de prise de parole.",
+        event_placeholder_date: "Ajouter la date", event_1_title: "Projection de film de remplacement", event_1_text: "Ajoutez ici le nom de l’événement, le lieu, la ville et le lien d’inscription.",
+        event_2_title: "Atelier ou conférence de remplacement", event_2_text: "Utilisez ceci pour les panels, séances de coaching et événements publics de narration.",
+        event_3_title: "Apparition en festival de remplacement", event_3_text: "Ajoutez la sélection officielle, la séance de questions-réponses ou les détails de networking.",
+        social_eyebrow: "Connexion", social_title: "Réseaux sociaux et voies de collaboration", social_intro: "Ces boutons sont prêts à être remplacés par de vrais liens.",
+        social_linkedin_text: "Remplacez par le profil de réseautage professionnel.", social_youtube_text: "Remplacez par les bandes-annonces, interviews ou la chaîne de production.", social_instagram_text: "Remplacez par les coulisses et les mises à jour visuelles.",
+        contact_eyebrow: "Contact", contact_title: "Réservations, partenariats et demandes", contact_intro: "Le formulaire ci-dessous est prêt pour Netlify Forms. Remplacez les coordonnées provisoires selon vos besoins.",
+        form_name: "Votre nom", form_email: "Adresse e-mail", form_subject: "Sujet", form_org: "Organisation / Société", form_message: "Parlez-nous de votre projet, de votre invitation ou de votre collaboration.", form_send: "Envoyer le message",
+        contact_boxes_title: "Blocs de contact rapide", contact_box_email: "E-mail professionnel", contact_box_whatsapp: "WhatsApp / Téléphone", contact_box_booking: "Réservation prise de parole / festival", contact_box_replace: "Remplacez par le contact de réservation",
+        footer_text: "Modèle de portfolio cinématographique multilingue prêt pour un déploiement Netlify."
+      },
+      sw: {
+        brand: "Rey Bulambo",
+        nav_about: "Kuhusu", nav_films: "Filamu", nav_timeline: "Mfuatano", nav_awards: "Tuzo", nav_presskit: "Kifurushi cha habari", nav_blog: "Blogu", nav_events: "Matukio", nav_contact: "Wasiliana",
+        hero_eyebrow: "Portfolio ya Kisinema",
+        hero_title: "Mtengenezaji wa Filamu na Msanii wa Hadithi Aliyeshinda Tuzo",
+        hero_text: "Rey Bulambo huunda filamu, mazungumzo, na simulizi zinazojengwa na jamii ambazo huinua sauti za wakimbizi, vipaji vya vijana, na athari za kijamii kuvuka mipaka.",
+        hero_btn_watch: "Tazama filamu", hero_btn_contact: "Weka nafasi / Wasiliana", hero_btn_presskit: "Angalia kifurushi cha habari",
+        profile_role: "Mtengenezaji wa Filamu • Podikasta • Kocha wa Uigizaji", profile_location: "Anaishi Lodwar, Turkana County, Kenya",
+        badge_founder: "Mwanzilishi, Kakuwud Films", badge_fellow: "Mshiriki wa Solution Journalism 2021", badge_impact: "Usimulizi wa athari za kijamii",
+        stat_films: "Miradi ya filamu", stat_awards: "Tuzo / utambuzi", stat_workshops: "Warsha na mazungumzo", stat_network: "Mtandao wa kitaaluma",
+        about_eyebrow: "Kuhusu Rey", about_title: "Wasifu, dhamira, na msingi wa tovuti", about_intro: "Toleo hili lina sehemu tayari kujazwa ili maelezo ya wasifu yaongezwe baadaye bila kubadili muundo wa tovuti.",
+        bio_short_title: "Muhtasari wa kitaaluma", bio_short_text: "Mtengenezaji wa filamu aliyejulikana kwa simulizi zinazolenga uzoefu wa wakimbizi, uwezeshaji wa vijana, kazi ya ukumbi wa michezo, na mazungumzo ya podcast yanayoongeza sauti zisizosikika sana.",
+        bio_early_label: "Maisha ya awali", placeholder_early: "Ongeza hapa hadithi ya maisha ya awali, mazingira, na uzoefu uliomjenga.",
+        bio_education_label: "Elimu", placeholder_education: "Ongeza hapa mafunzo ya kitaaluma, warsha, elimu ya filamu, na historia ya malezi.",
+        bio_career_label: "Njia ya kazi", placeholder_career: "Ongeza hapa mabadiliko muhimu ya kazi, taasisi, ushirikiano, na majukumu makubwa.",
+        impact_title: "Mwelekeo wa athari", impact_1_title: "Usimulizi wa wakimbizi", impact_1_text: "Kazi ya hati na simulizi inayolenga heshima, uimara, na uzoefu wa maisha.",
+        impact_2_title: "Kukuza vipaji vya vijana", impact_2_text: "Mafunzo ya ubunifu, kocha wa uigizaji, na fursa kwa vijana wa wakimbizi na jamii zinazowapokea.",
+        impact_3_title: "Ushirikiano wa kijamii", impact_3_text: "Sehemu tayari kuonyesha ushirikiano na FilmAid Kenya, NGOs, tamasha, na vyombo vya habari.",
+        founder_title: "Sanduku la simulizi la mwanzilishi", founder_text: "Tumia sehemu hii kueleza hadithi ya Kakuwud Films: kwa nini ilianzishwa, inamhudumia nani, inazalisha nini, na jinsi inavyochangia mabadiliko ya kijamii kupitia sinema na uigizaji.",
+        founder_box_1_title: "Asili", founder_box_1_text: "Ongeza asili, dhamira, na mazingira ya kuanzishwa kwa Kakuwud Films.",
+        founder_box_2_title: "Programu", founder_box_2_text: "Ongeza warsha, uzalishaji, maabara ya vijana, kazi ya ukumbi wa michezo, na mipango ya podcast.",
+        founder_box_3_title: "Maono", founder_box_3_text: "Ongeza maono ya baadaye: kufikia kanda, malezi, tamasha, na hadhira ya kimataifa.",
+        films_eyebrow: "Maktaba ya Filamu", films_title: "Filmografia ya nguvu na galeria", search_placeholder: "Tafuta jina au jukumu",
+        filter_all: "Zote", filter_documentary: "Hati", filter_short: "Filamu fupi", filter_podcast: "Podcast", filter_theater: "Ukumbi wa michezo",
+        timeline_eyebrow: "Mfuatano wa kazi", timeline_title: "Wasifu unaofunguka na hatua muhimu za safari", timeline_intro: "Kila hatua hufunguka kwa maelezo zaidi ili iwe rahisi kuongeza taarifa zilizothibitishwa baadaye.",
+        timeline_1_title: "Msingi wa ubunifu wa awali", timeline_year_placeholder: "Ongeza mwaka", timeline_1_text: "Ongeza uzoefu wa kwanza wa hadithi, maonesho, au media uliounda mwelekeo wa msanii.",
+        timeline_2_title: "Kipindi cha mafunzo na kukua", timeline_2_text: "Ongeza elimu, warsha, malezi, na uzalishaji au ushirikiano wa kwanza muhimu.",
+        timeline_3_title: "Ushiriki wa Solution Journalism", timeline_3_text: "Onyesha ushiriki wa mwaka 2021 na jinsi ulivyoathiri uandishi, mtazamo wa hati, na usimulizi wa athari.",
+        timeline_4_title: "Uongozi wa Kakuwud Films", timeline_4_text: "Ongeza hatua za uongozi, kazi ya vijana, uzalishaji muhimu, na juhudi za kujenga jamii.",
+        timeline_year_placeholder_future: "Baadaye", timeline_5_title: "Hatua inayofuata", timeline_5_text: "Tumia nafasi hii kueleza filamu zijazo, tamasha, ushirikiano wa kikanda, au malengo ya usambazaji wa kimataifa.",
+        awards_eyebrow: "Utambuzi", awards_title: "Tuzo, heshima, na uaminifu wa tamasha", awards_intro: "Baadhi ya sehemu ni nafasi za kujaza ili historia ya tuzo iliyothibitishwa iongezwe kwa haraka.",
+        award_placeholder_year: "Ongeza mwaka", award_1_title: "Mshiriki wa Solution Journalism", award_1_text: "Sehemu tayari kwa maelezo ya ushiriki, taasisi iliyoandaa, na umuhimu wake kitaaluma.",
+        award_2_title: "Uteuzi / maonyesho ya tamasha", award_2_text: "Ongeza jina la tamasha, uteuzi rasmi, au hatua ya maonyesho hapa.",
+        award_3_title: "Utambuzi wa athari ya kijamii", award_3_text: "Ongeza utambuzi kutoka NGO, media, au jamii unaohusiana na simulizi na maendeleo ya vijana.",
+        presskit_eyebrow: "Kifurushi cha habari", presskit_title: "Vifaa vya media na sehemu za kupakua", presskit_intro: "Kimeandaliwa kwa mfumo wa masanduku ili kifurushi kamili cha habari kiongezwe bila kubadilisha muundo.",
+        presskit_left_title: "Yaliyomo kwenye kifurushi", presskit_left_text: "Badilisha sehemu za muda kwa wasifu halisi wa PDF, picha rasmi, mabango, maelezo ya maonyesho, maelezo ya kiufundi, na maombi ya mahojiano.",
+        presskit_item_1: "Wasifu mfupi wa PDF", presskit_item_2: "Picha rasmi zenye ubora wa juu", presskit_item_3: "Mabango na picha za filamu", presskit_item_4: "Maelezo ya tamasha / maonyesho", download_template: "Pakua kiolezo", replace_here: "Badilisha hapa",
+        quote_label: "Sehemu ya nukuu iliyopendekezwa", quote_text: "“Tumia eneo hili kwa kauli yenye nguvu ya msanii, nukuu ya waandishi wa habari, au tamko la dhamira linalofupisha kusudi la kazi.”", quote_note: "Sanduku hili linafaa kwa sifa za media, nukuu za wakosoaji, au ujumbe mfupi wa Rey Bulambo.",
+        gallery_eyebrow: "Portfolio ya picha", gallery_title: "Picha za seti, mabango, na matukio ya jamii", gallery_intro: "Bonyeza kadi yoyote kufungua picha kubwa.",
+        gallery_card_1_title: "Mpangilio wa mahojiano", gallery_card_1_text: "Tayari kwa maelezo ya nyuma ya pazia au uzalishaji wa media.",
+        gallery_card_2_title: "Picha rasmi", gallery_card_2_text: "Tumia kwa press, ukurasa wa wasifu, au programu ya tamasha.",
+        gallery_card_3_title: "Bango la muda", gallery_card_3_text: "Badilisha hili na bango halisi, picha ya filamu, au picha ya tukio.",
+        podcast_eyebrow: "Podcast", podcast_title: "Mazungumzo na usimulizi wa sauti", podcast_card_1_title: "Sehemu ya kipindi maalum", podcast_card_1_text: "Ongeza jina la kipindi, mgeni, kiungo cha kusikiliza, na ujumbe wa kifupi.", listen_preview: "Sikiliza mfano",
+        theater_title: "Sanduku la ukumbi wa michezo na coaching", theater_text: "Ongeza maonesho ya jukwaani, kazi ya kocha wa uigizaji, warsha, na maabara za maonesho ya vijana hapa.",
+        blog_eyebrow: "Jarida / Blogu", blog_title: "Hadithi, tafakari, na maelezo ya uzalishaji", blog_intro: "Kadi hizi zinaweza kuwa makala, insha, au taarifa za miradi.", blog_placeholder: "Sehemu ya muda",
+        blog_1_title: "Maisha, sinema, na usimulizi wa jamii", blog_1_text: "Tumia kadi hii kwa makala ya baadaye au insha kuhusu utengenezaji wa filamu katika maeneo ya jamii.",
+        blog_2_title: "Nyuma ya pazia ya hati", blog_2_text: "Ongeza mawazo kuhusu uzalishaji, maadili, mahojiano, uhariri, au kazi ya uwanjani.",
+        blog_3_title: "Ubunifu wa vijana na kukuza vipaji", blog_3_text: "Shiriki matokeo, tafakari, na mafunzo kutoka kuwalea wasimulizi chipukizi.",
+        events_eyebrow: "Maonyesho na mazungumzo", events_title: "Matukio na mwonekano ujao", events_intro: "Tayari kwa tamasha, maonyesho, warsha, na mialiko ya kuzungumza.",
+        event_placeholder_date: "Ongeza tarehe", event_1_title: "Sehemu ya maonyesho ya filamu", event_1_text: "Ongeza jina la tukio, ukumbi, mji, na kiungo cha usajili hapa.",
+        event_2_title: "Sehemu ya warsha au hotuba", event_2_text: "Tumia kwa paneli, vikao vya coaching, na matukio ya hadithi hadharani.",
+        event_3_title: "Sehemu ya tamasha", event_3_text: "Ongeza uteuzi rasmi, maswali na majibu, au maelezo ya mtandao wa kitaaluma.",
+        social_eyebrow: "Unganika", social_title: "Mitandao ya kijamii na njia za ushirikiano", social_intro: "Vitufe hivi viko tayari kubadilishwa na viungo halisi.",
+        social_linkedin_text: "Badilisha na wasifu wa mtandao wa kitaaluma.", social_youtube_text: "Badilisha na trailer, mahojiano, au channel ya uzalishaji.", social_instagram_text: "Badilisha na nyuma ya pazia na taarifa za picha.",
+        contact_eyebrow: "Wasiliana", contact_title: "Nafasi za kazi, ushirikiano, na maombi", contact_intro: "Fomu iliyo hapa chini iko tayari kwa Netlify Forms. Badilisha taarifa za mawasiliano ya muda inavyohitajika.",
+        form_name: "Jina lako", form_email: "Barua pepe", form_subject: "Somo", form_org: "Shirika / Kampuni", form_message: "Tuambie kuhusu mradi wako, mwaliko, au ushirikiano.", form_send: "Tuma ujumbe",
+        contact_boxes_title: "Masanduku ya mawasiliano ya haraka", contact_box_email: "Barua pepe ya kazi", contact_box_whatsapp: "WhatsApp / Simu", contact_box_booking: "Booking ya mazungumzo / tamasha", contact_box_replace: "Badilisha na mawasiliano ya booking",
+        footer_text: "Kiolezo cha portfolio ya kisinema chenye lugha nyingi tayari kwa Netlify."
+      }
+    };
+
+    const films = [
+      {
+        title: { en: "Refugee Voices", fr: "Voix des réfugiés", sw: "Sauti za wakimbizi" },
+        year: "2024",
+        category: "documentary",
+        role: { en: "Director / Story Producer", fr: "Réalisateur / Producteur narratif", sw: "Mkurugenzi / Mtayarishaji wa simulizi" },
+        desc: {
+          en: "Template card ready for a documentary synopsis, trailer link, and festival line.",
+          fr: "Carte modèle prête pour un synopsis documentaire, un lien de bande-annonce et une ligne de festival.",
+          sw: "Kadi ya kiolezo tayari kwa muhtasari wa hati, kiungo cha trailer, na mstari wa tamasha."
+        },
+        image: "assets/film1.png"
+      },
+      {
+        title: { en: "Kakuma Stories", fr: "Histoires de Kakuma", sw: "Hadithi za Kakuma" },
+        year: "2023",
+        category: "short",
+        role: { en: "Producer / Mentor", fr: "Producteur / Mentor", sw: "Mtayarishaji / Mlezi" },
+        desc: {
+          en: "Use this card for a short film, community production, or youth-led visual project.",
+          fr: "Utilisez cette carte pour un court métrage, une production communautaire ou un projet visuel mené par des jeunes.",
+          sw: "Tumia kadi hii kwa filamu fupi, uzalishaji wa kijamii, au mradi wa picha unaoongozwa na vijana."
+        },
+        image: "assets/film2.png"
+      },
+      {
+        title: { en: "Mic & Memory", fr: "Micro et mémoire", sw: "Mikrofoni na kumbukumbu" },
+        year: "2025",
+        category: "podcast",
+        role: { en: "Host / Interviewer", fr: "Animateur / Intervieweur", sw: "Mwenyeji / Mhoji" },
+        desc: {
+          en: "Works as a placeholder for a podcast episode, series, or interview-based storytelling format.",
+          fr: "Fonctionne comme espace réservé pour un épisode podcast, une série ou un format narratif basé sur l’interview.",
+          sw: "Inafanya kazi kama nafasi ya podcast, mfululizo, au simulizi ya mahojiano."
+        },
+        image: "assets/film3.png"
+      },
+      {
+        title: { en: "Stage of Hope", fr: "Scène d’espoir", sw: "Jukwaa la matumaini" },
+        year: "2022",
+        category: "theater",
+        role: { en: "Acting Coach / Facilitator", fr: "Coach d’acteurs / Facilitateur", sw: "Kocha wa uigizaji / Mwezeshaji" },
+        desc: {
+          en: "Use for theater productions, performance labs, or youth acting showcases.",
+          fr: "À utiliser pour des productions théâtrales, laboratoires de performance ou vitrines de jeunes acteurs.",
+          sw: "Tumia kwa kazi za ukumbi wa michezo, maabara za maonesho, au maonyesho ya vijana."
+        },
+        image: "assets/banner.png"
+      }
+    ];
+
+    let currentLang = localStorage.getItem('rbLang') || 'en';
+
+    function t(key){
+      return translations[currentLang]?.[key] || translations.en[key] || key;
+    }
+
+    function applyTranslations(){
+      document.documentElement.lang = currentLang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = t(el.dataset.i18n);
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        el.placeholder = t(el.dataset.i18nPlaceholder);
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === currentLang);
+      });
+      renderFilms();
+    }
+
+    function renderFilms(){
+      const q = document.getElementById('filmSearch').value.trim().toLowerCase();
+      const activeFilter = document.querySelector('.chip.active')?.dataset.filter || 'all';
+      const grid = document.getElementById('filmsGrid');
+
+      const filtered = films.filter(f => {
+        const title = f.title[currentLang].toLowerCase();
+        const role = f.role[currentLang].toLowerCase();
+        const matchSearch = !q || title.includes(q) || role.includes(q);
+        const matchFilter = activeFilter === 'all' || f.category === activeFilter;
+        return matchSearch && matchFilter;
+      });
+
+      grid.innerHTML = filtered.map((film, idx) => `
+        <article class="card film-card fade-up show">
+          <div class="poster">
+            <img src="${film.image}" alt="${film.title[currentLang]}">
+            <span class="poster-label">${film.year}</span>
+          </div>
+          <div class="film-body">
+            <div class="stack">
+              <h3>${film.title[currentLang]}</h3>
+              <div class="meta">
+                <span>${film.year}</span>
+                <span>•</span>
+                <span>${t('filter_' + film.category)}</span>
+              </div>
+              <p class="muted">${film.desc[currentLang]}</p>
+            </div>
+            <div class="meta"><strong>${film.role[currentLang]}</strong></div>
+            <div class="hero-actions">
+              <button class="btn primary trailer-btn" data-title="${film.title[currentLang]}" data-desc="${film.desc[currentLang]}">Trailer / Preview</button>
+              <button class="btn">${film.role[currentLang]}</button>
+            </div>
+          </div>
+        </article>
+      `).join('') || `<div class="card info-card"><p class="muted">${currentLang === 'fr' ? 'Aucun résultat.' : currentLang === 'sw' ? 'Hakuna matokeo.' : 'No results found.'}</p></div>`;
+
+      bindTrailerButtons();
+    }
+
+    function bindTrailerButtons(){
+      document.querySelectorAll('.trailer-btn').forEach(btn => {
+        btn.onclick = () => openModal({
+          title: btn.dataset.title || 'Preview',
+          desc: btn.dataset.desc || '',
+          media: `<div><div style="font-size:3rem;margin-bottom:10px">▶</div><p>${currentLang === 'fr' ? 'Ajoutez ici un lien YouTube, Vimeo, une bande-annonce intégrée ou un lecteur audio.' : currentLang === 'sw' ? 'Ongeza hapa kiungo cha YouTube, Vimeo, trailer iliyowekwa ndani, au kicheza sauti.' : 'Add a YouTube, Vimeo, embedded trailer, or audio player here.'}</p></div>`
+        });
+      });
+    }
+
+    function openModal({title, desc, media}){
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = desc;
+      document.getElementById('modalMedia').innerHTML = media;
+      document.getElementById('mediaModal').classList.add('open');
+      document.getElementById('mediaModal').setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal(){
+      document.getElementById('mediaModal').classList.remove('open');
+      document.getElementById('mediaModal').setAttribute('aria-hidden', 'true');
+    }
+
+    function animateCounts(){
+      const counts = document.querySelectorAll('.count');
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(!entry.isIntersecting) return;
+          const el = entry.target;
+          const target = Number(el.dataset.target || 0);
+          let start = 0;
+          const duration = 1400;
+          const startTime = performance.now();
+
+          function step(now){
+            const progress = Math.min((now - startTime) / duration, 1);
+            const value = Math.floor(progress * target);
+            el.textContent = target >= 500 ? value + '+' : value;
+            if(progress < 1) requestAnimationFrame(step);
+            else el.textContent = target >= 500 ? target + '+' : target;
+          }
+          requestAnimationFrame(step);
+          io.unobserve(el);
+        });
+      }, {threshold:.55});
+      counts.forEach(el => io.observe(el));
+    }
+
+    function revealOnScroll(){
+      const items = document.querySelectorAll('.fade-up');
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('show');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold:.12});
+      items.forEach(item => io.observe(item));
+    }
+
+    function initTheme(){
+      const saved = localStorage.getItem('rbTheme');
+      if(saved === 'light') document.body.classList.add('light');
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        document.body.classList.toggle('light');
+        localStorage.setItem('rbTheme', document.body.classList.contains('light') ? 'light' : 'dark');
+      });
+    }
+
+    function initLang(){
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentLang = btn.dataset.lang;
+          localStorage.setItem('rbLang', currentLang);
+          applyTranslations();
+        });
+      });
+      applyTranslations();
+    }
+
+    function initFilters(){
+      document.querySelectorAll('.chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          renderFilms();
+        });
+      });
+      document.getElementById('filmSearch').addEventListener('input', renderFilms);
+    }
+
+    function initGallery(){
+      document.querySelectorAll('.gallery-open').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.image;
+          const title = btn.dataset.title || 'Image';
+          openModal({
+            title,
+            desc: currentLang === 'fr' ? 'Remplacez cette image par une photo de plateau, une affiche, un portrait ou une image de projection.' :
+                  currentLang === 'sw' ? 'Badilisha picha hii na picha ya seti, bango, picha rasmi, au picha ya maonyesho.' :
+                  'Replace this image with a set photo, poster, headshot, or screening still.',
+            media: `<img src="${src}" alt="${title}" style="width:100%;height:100%;object-fit:contain;border-radius:12px">`
+          });
+        });
+      });
+    }
+
+    function initModal(){
+      document.getElementById('closeModal').addEventListener('click', closeModal);
+      document.getElementById('mediaModal').addEventListener('click', (e) => {
+        if(e.target.id === 'mediaModal') closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') closeModal();
+      });
+    }
+
+    function initMenu(){
+      const navLinks = document.getElementById('navLinks');
+      document.getElementById('menuToggle').addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    initTheme();
+    initLang();
+    initFilters();
+    initGallery();
+    initModal();
+    initMenu();
+    revealOnScroll();
+    animateCounts();
+    bindTrailerButtons();
+  </script>
+</body>
+</html>
