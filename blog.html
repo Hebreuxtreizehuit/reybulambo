@@ -39,10 +39,12 @@ fetch("posts/my-first-post.md")
 .then(res => res.text())
 .then(text => {
 
+const cleaned = text.split("---").pop().trim();
+
 document.getElementById("posts").innerHTML = `
 <div class="post">
 <h2>My First Post</h2>
-<p>${text}</p>
+<p>${cleaned}</p>
 </div>
 `;
 
