@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blog | Rey Bulambo</title>
+
+<style>
+body{
+  font-family:Arial;
+  background:#0b0b0f;
+  color:white;
+  padding:40px;
+}
+
+.post{
+  background:#15151d;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+
+a{
+  color:#d6ad60;
+  text-decoration:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Blog</h1>
+
+<div id="posts"></div>
+
+<script>
+
+fetch("posts/my-first-post.md")
+.then(res => res.text())
+.then(text => {
+
+document.getElementById("posts").innerHTML = `
+<div class="post">
+<h2>My First Post</h2>
+<p>${text}</p>
+</div>
+`;
+
+});
+
+</script>
+
+</body>
+</html>
