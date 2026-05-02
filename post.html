@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Post | Rey Bulambo</title>
+<style>
+body{font-family:Arial;background:#0b0b0f;color:white;padding:40px}
+article{background:#15151d;padding:30px;border-radius:14px;max-width:800px}
+a{color:#d6ad60;text-decoration:none;font-weight:bold}
+</style>
+</head>
+<body>
+
+<a href="blog.html">← Back to Blog</a>
+<br><br>
+
+<article id="post"></article>
+
+<script>
+const slug = new URLSearchParams(window.location.search).get("slug");
+
+fetch("posts.json")
+.then(res => res.json())
+.then(posts => {
+  const post = posts.find(p => p.slug === slug);
+  const box = document.getElementById("post");
+
+  if (!post) {
+    box.innerHTML = "<h1>Post not found</h1>";
+    return;
+  }
+
+  document.title = post.title + " | Rey Bulambo";
+
+  box.innerHTML = `
+    <h1>${post.title}</h1>
+    <p>${post.date}</p>
+    <p>${post.body}</p>
+  `;
+});
+</script>
+
+</body>
+</html>
