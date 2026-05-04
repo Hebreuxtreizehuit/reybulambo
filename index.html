@@ -1244,5 +1244,24 @@
     </iframe>
   </div>
 </div>
+<script>
+document.querySelectorAll(".trailer-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const modal = document.getElementById("videoModal");
+    const frame = document.getElementById("videoFrame");
+
+    frame.src = btn.getAttribute("data-video");
+    modal.style.display = "block";
+  });
+});
+
+document.querySelector(".close-btn").addEventListener("click", () => {
+  const modal = document.getElementById("videoModal");
+  const frame = document.getElementById("videoFrame");
+
+  modal.style.display = "none";
+  frame.src = "";
+});
+</script>
 </body>
 </html>
