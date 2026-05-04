@@ -1128,9 +1128,12 @@
     }
 
     function closeModal(){
-      document.getElementById('mediaModal').classList.remove('open');
-      document.getElementById('mediaModal').setAttribute('aria-hidden', 'true');
-    }
+  document.getElementById('mediaModal').classList.remove('open');
+  document.getElementById('mediaModal').setAttribute('aria-hidden', 'true');
+
+  // Stop video
+  document.getElementById('modalMedia').innerHTML = '';
+}
 
     function animateCounts(){
       const counts = document.querySelectorAll('.count');
